@@ -68,14 +68,14 @@ export default function LeafletMap({
       center: [26.3, 92.9],
       zoom: 7,
       zoomControl: false,
-      attributionControl: false,
+      attributionControl: true,
       minZoom: 6,
       maxZoom: 14,
     });
 
-    // High quality CartoDB Dark Matter GIS tiles
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-      subdomains: "abcd",
+    // Use public tiles so the map works without a provider API key.
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       maxZoom: 19,
     }).addTo(map);
 
